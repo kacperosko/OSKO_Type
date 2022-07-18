@@ -1,0 +1,65 @@
+{% extends "layouts/base.html" %}
+{% block title %} DSS - Homepage {% endblock %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+<style>
+.dot {
+  height: 500px;
+  width: 500px;
+  background-color: #ffffff;
+  border-radius: 50%;
+  display: inline-block;
+}
+.center {
+position: absolute;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+padding: 10px;
+}
+
+.name{
+font-family: Arial, Helvetica, sans-serif;font-style: normal;
+font-weight: 700;
+font-size: 80px;
+line-height: 85px;
+/* identical to box height */
+background: linear-gradient(86.27deg, #243257 1.22%, #456097 43.24%, #DD5853 84.24%);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+background-clip: text;
+text-fill-color: transparent;
+}
+</style>
+{% endblock stylesheets %}
+
+{% block content %}
+	<div class="d-flex align-items-center card full-card">
+		<div class="container">
+			<div style="margin-bottom: 10px" class="row justify-content-center">
+				<div class="col-auto">
+					<p class="name">Twoje osiągnięcia</p>
+				</div>
+			</div>
+			<div style="margin-bottom: 10px" class="row justify-content-center">
+				{% if g %}
+				{% for key, value in g.items %}
+				<a>{{key}}</a>
+				{% for x in value %}
+				<a>{{x}}</a>
+				{% endfor %}
+				{% endfor %}
+				{% endif %}
+			</div>
+
+		</div>
+	</div>
+
+
+
+
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}

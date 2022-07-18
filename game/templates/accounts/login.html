@@ -1,0 +1,49 @@
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="/static/assets/css/code.css">
+<link rel="stylesheet" href="/static/assets/css/fonts.css">
+
+<style>
+
+</style>{% endblock stylesheets %}
+
+{% block content %}
+<div style="position: fixed; height: 100%; width: 100%; top: 0; left: 0; background-color: #090126;" class="">
+</div>
+
+<section class="login-frame">
+  <div class="login-box justify-content-center align-items-center">
+    <div class="login-context">
+      <div class="title-login text-uppercase">Logowanie</div>
+      <div style="margin-top:20px;"></div>
+      <div class="login-info">Wpisz email i hasło</div>
+      <div style="margin-top:20px;margin-bottom:10px;" class="text-center text-danger">
+        {% if msg %}<b>{{ msg }}</b>{% endif %}
+      </div>
+      <form method="post" action="">
+          {% csrf_token %}
+        <div class="form-outline form-white mb-4">
+            {{ form.username }}
+        </div>
+
+        <div style="margin-top:50px;margin-bottom:10px;"></div>
+
+        <div class="form-outline form-white mb-4">
+            {{ form.password }}
+        </div>
+
+<!--        <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Zapomniałeś hasła?</a></p>-->
+        <div style="margin-top:50px;margin-bottom:10px;"></div>
+        <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+      </form>
+      <p><a href="{% url 'password_reset' %}">Forgotten your password?</a></p>
+    </div>
+  </div>
+
+</section>
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}{% endblock javascripts %}

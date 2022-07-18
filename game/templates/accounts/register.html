@@ -1,0 +1,46 @@
+
+
+{% block title %} Login {% endblock title %}
+
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+
+{% if msg %}
+<span class="text-danger">{{ msg | safe }}</span>
+{% else %}
+<span>
+Complete your credentials
+</span>
+{% endif %}
+
+<form method="post" action="">
+
+{% csrf_token %}
+
+
+        {{ form.username }}
+
+<span class="text-danger">{{ form.username.errors }}</span>
+
+        {{ form.email }}
+
+<span class="text-danger">{{ form.email.errors }}</span>
+
+
+        {{ form.password1 }}
+<span class="text-danger">{{ form.password1.errors }}</span>
+
+
+        {{ form.password2 }}
+<span class="text-danger">{{ form.password2.errors }}</span>
+
+<button type="submit" class="btn btn-success">Submit</button>
+                            &nbsp;
+
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}{% endblock javascripts %}

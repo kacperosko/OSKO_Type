@@ -1,0 +1,35 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block stylesheets %}
+
+<style>
+</style>
+{% endblock stylesheets %}
+{% load tag %}
+{% block content %}
+
+<div class="main-box align-items-center justify-content-center">
+    <div id="timer"></div>
+    <div id='test' class="game-box">
+        <div class="game-text">
+            {% for word in text %}
+            <div class="word" id="{{forloop.counter}}">
+                {% for letter in  word %}
+                    <span class="letter">{% if letter == " " %}&nbsp;{%else%}{{letter}}{% endif %}</span>
+                {% endfor %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<img id="computer" src="/static/img/computer.png">
+<img id="ok" src="/static/img/ok-cut.png">
+<div style="display: none;" id="words_count">{{count}}</div>
+
+
+{% endblock content %}
+{% block javascripts %}
+<script src="/static/js/type.js"></script>
+{% endblock javascripts %}

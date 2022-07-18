@@ -1,0 +1,154 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Spline Sans Mono', monospace;
+}
+/* .main-box{} */
+.footer{
+    position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.footer-box{
+    background-color: black;
+    line-height: 30px;
+    height: 30px;
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+.author{
+    color: #F24B59;
+    font-weight: bold;
+}
+.logo-box{
+    display: inline-block;
+
+}
+.logo{
+    padding-top: 20px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 90px;
+}
+.logo-text{
+    font-size: 59px;
+    font-weight: 300;
+    margin-left: -10px;
+    width: auto;
+}
+
+/* INFO STYLE */
+.info-box{
+    align-content: center;
+    text-align: center;
+    max-width: 50vw;
+    margin-bottom: 50px;
+}
+.game-box{
+    align-content: center;
+    text-align: center;
+    max-width: 50vw;
+}
+.info-title{
+    color: #F24B6A;
+}
+.start-btn{
+    width: fit-content;
+    color: #F2F2F2;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 700;
+
+    background: linear-gradient(180deg, #F24B6A 0%, #0F0F0F 140.88%);
+    border-radius: 68.5px;
+    padding: 20px;
+    padding-left: 30px;
+    padding-right: 30px;
+    cursor: pointer;
+    margin: auto;
+    transition: all 200ms ease-out
+}
+
+.start-btn:hover{
+    letter-spacing: 8px;
+}
+#rocket{
+    margin-top: -150px;
+    margin-left: -30vw;
+    /* margin-bottom: -30vw; */
+    left: 0;
+    position: relative;
+    transform: rotate(70deg);
+
+    max-height: 400;
+    min-height: 350;
+    height: 24vw;
+}
+#computer{
+    position: absolute;
+    top: 10%;
+    left: 0;
+    transform: scaleX(-1);
+
+    max-height: 400;
+    min-height: 350;
+    height: 24vw;
+}
+#ok{
+    position: absolute;
+    top: 53%;
+    right: 0;
+    height: 23vw;
+    max-height: 250;
+}
+#planet{
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    transform: rotate(-20deg);
+    height: 23vw;
+    max-height: 350;
+}
+#hello{
+    position: absolute;
+    top: 0;
+    right: 30vw;
+}
+.letter{
+    margin-left: -6px;
+    transition: all 200ms;
+    /* border-bottom: 5px solid red; */
+}
+.word{
+    white-space:nowrap;
+
+    display:inline;
+}
+
+@keyframes pulse{
+    0%{
+        transform: scale(0.95);
+    }
+    70%{
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(0.95);
+    }
+}
+
+.animateLetter{
+    animation-name: pulse;
+    animation-duration: 1s;
+}
+#timer{
+    margin: auto;
+    background: linear-gradient(99.21deg, #0E0E0E 0%, #F24B6A 100%);
+    border-radius: 20px;
+    width: fit-content;
+    color: #F2F2F2;
+    padding: 10PX;
+    font-size: 20px;
+    margin-bottom: 40px;
+    margin-top: -60px;
+}

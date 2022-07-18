@@ -1,0 +1,72 @@
+{% load custom_tags %}
+
+{% block content %}
+
+
+
+<div id="BgModal" class="bg-modal" style="cursor:pointer" onclick="hide_bg()">
+</div>
+<div id="popupBox" class="popup-box">
+    <div style="position:absolute;top: 50%;left:50%;-webkit-transform: translate(-50%, -50%);transform: translate(-50%, -50%);" class="login-box justify-content-center align-items-center text-center">
+        <div class="login-context">
+            <div class="row justify-content-center ">
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 title-login text-uppercase">Adding Student</div>
+                <div class="col-sm-2 text-right" style="cursor:pointer; margin-top:20px; margin-right:-20px" onclick="hide_bg()">
+                    <img src="/static/assets/img/icons/x.svg" height="30" width="30">
+                </div>
+            </div>
+
+            <div style="margin-top:20px;"></div>
+            <div style="margin-top:20px;margin-bottom:10px;"></div>
+            <form method="post" action="">
+                {% csrf_token %}
+
+
+                <div class="form-outline form-white mb-4">
+                    <div class="login-info">Email</div>
+                    {{ form.email|addcss:"login-input" }}
+                </div>
+
+
+
+                <div class="form-outline form-white mb-4">
+                    <div class="login-info">First name</div>
+                    {{ form.fname|addcss:"login-input" }}
+                </div>
+
+
+                <div class="form-outline form-white mb-4">
+                    <div class="login-info">Last name</div>
+                    {{ form.lname|addcss:"login-input" }}
+                </div>
+
+                <div class="form-outline form-white mb-4">
+                    <div class="login-info">Phone number</div>
+                    {{ form.phone|addcss:"login-input" }}
+                </div>
+
+
+                <div class="form-outline form-white mb-4">
+                    <div class="login-info">Birthday</div>
+                    {{ form.bday|addcss:"login-input" }}
+                </div>
+
+
+
+        <div style="margin-top:50px;margin-bottom:10px;"></div>
+        <button class="btn btn-outline-light btn-lg px-5" type="submit">Add Student</button>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock content %}
+
+{% block javascripts %}
+<script>
+    function hide_bg(){
+    document.querySelector('.bg-modal').style.display = 'none';
+    document.querySelector('.popup-box').style.display = 'none';
+}
+</script>
+{% endblock javascripts %}

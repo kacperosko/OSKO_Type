@@ -1,0 +1,47 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Home {% endblock %}
+
+{% block stylesheets %}
+
+<style>
+</style>
+{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="main-box align-items-center justify-content-center">
+    <div class="info-box">
+        <h2 class="info-title">Are you ready to test your typing skills?</h2>
+        <div class="info-text">
+            Let&#39;s play a speed typing test game to see how fast you can use your keyboard! It’s also a good way to train fast typing :)
+        </div>
+    </div>
+    <div class="info-box">
+        <h2 class="info-title">
+            How to play?
+        </h2>
+        <div class="info-text">
+            After clicking <strong>START</strong> button you will get some random text. Then you have to type each letter corectly to go to the next. If you will type wrong you won’t move on! Remember that you have only one minute to show up your skills :D
+            <br>Good luck!
+        </div>
+    </div>
+
+    <div class="start-btn" id="start" onclick="location.href = 'game.html';">
+        START
+    </div>
+
+    <img id="rocket" src="/static/img/rocket.png">
+    <img id="planet" src="/static/img/planet.png" >
+    <img id="hello" src="/static/img/hello.png" height="200">
+
+</div>
+
+
+
+{% endblock content %}
+
+<script>
+</script>
+{% block javascripts %}
+{% endblock javascripts %}

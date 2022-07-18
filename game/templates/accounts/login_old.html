@@ -1,0 +1,81 @@
+<!-- Specific Page CSS goes HERE  -->
+{% block stylesheets %}
+<link rel="stylesheet" href="/static/assets/css/bootstrap.min.css">
+<style>
+.login-box {
+	background: linear-gradient(-45deg, #1a0959,  #a5587c, #4e208c, #0094c2);
+	background-size: 500% 500%;
+	animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+</style>{% endblock stylesheets %}
+
+{% block content %}
+<div style="position: fixed; height: 100%; width: 100%; top: 0; left: 0; background-color: #090126;" class="">
+</div>
+
+<section style="z-index: 100;" class="vh-100">
+  <div class="container">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card login-box text-white" style=" opacity:; border-radius: 1rem;">
+          <div style="padding-left: 3rem!important; padding-right: 3rem!important;" class=" text-center">
+
+            <div class="mb-md-5 mt-md-4">
+
+              <h2 class="fw-bold mb-2 text-uppercase">Logowanie</h2>
+              <p class="text-white-50">Wpisz swoją nazwę użytkownika i hasło</p>
+              {% if msg%}
+              <h3 style="color: red; margin-bottom: 25px" class="fw-bold">{{ msg }}</h3>
+              {% endif %}
+                <form method="post" action="">
+                    {% csrf_token %}
+                  <div class="form-outline form-white mb-4">
+                      {{ form.username }}
+                    <label class="form-label">Login</label>
+                  </div>
+
+                  <div class="form-outline form-white mb-4">
+                      {{ form.password }}
+                    <label class="form-label">Hasło</label>
+                  </div>
+
+                  <p class="small mb-5 pb-lg-2"><a class="text-white-50" href="#!">Zapomniałeś hasła?</a></p>
+
+                  <button class="btn btn-outline-light btn-lg px-5" type="submit">Login</button>
+                </form>
+
+<!--              <div class="d-flex justify-content-center text-center mt-4 pt-1">-->
+<!--                <a href="#!" class="text-white"><i class="fab fa-facebook-f fa-lg"></i></a>-->
+<!--                <a href="#!" class="text-white"><i class="fab fa-twitter fa-lg mx-4 px-2"></i></a>-->
+<!--                <a href="#!" class="text-white"><i class="fab fa-google fa-lg"></i></a>-->
+<!--              </div>-->
+
+            </div>
+
+<!--            <div>-->
+<!--              <p class="mb-0">Don't have an account? <a href="#!" class="text-white-50 fw-bold">Sign Up</a></p>-->
+<!--            </div>-->
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}
+
+<!-- Specific JS goes HERE -->
+{% block javascripts %}{% endblock javascripts %}
