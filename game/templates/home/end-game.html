@@ -1,0 +1,38 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} Good game! {% endblock %}
+
+{% block stylesheets %}
+<style>
+</style>
+{% endblock stylesheets %}
+{% load tag %}
+{% block content %}
+
+<div class="main-box align-items-center justify-content-center row">
+    <div class="col-md-6" >
+        <span id="end-block">
+        <h2>Nice game!<br>Here is your score:</h2>
+        <div style="font-size: 20px; margin-top: 20px">
+            Words per minute: <span id="wpm" class="font-weight-bold"></span><br>
+            <span style="color: #B302F1">Accuracy: <span id="accuracy" class="font-weight-bold"></span>%</span><br>
+            <span class="text-success">Correct letters: <span id="correct" class="font-weight-bold"></span></span><br>
+            <span class="text-danger">Wrong letters: <span id="wrong" class="font-weight-bold"></span></span><br>
+        </div>
+    </span>
+        <div class="start-btn" id="end-button" onclick="location.href = 'game';">
+            PLAY AGAIN
+        </div>
+    </div>
+    
+    <div class="col-md-4">
+        <img src="/static/img/hello.png" height="300">
+
+    </div>
+</div>
+
+
+{% endblock content %}
+{% block javascripts %}
+<script src="/static/js/end.js"></script>
+{% endblock javascripts %}

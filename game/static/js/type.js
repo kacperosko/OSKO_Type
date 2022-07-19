@@ -4,6 +4,10 @@ let content = document.getElementById(1).getElementsByTagName('span')[0].innerHT
 const audio = new Audio("static/sounds/wrong-short.mp3")
 let parent = 1;
 let child = 0;
+let correct_words = 0;
+let correct_letters = 0;
+let wrong_letters = 0;
+
 addLine(parent, child);
 // [Log] 32 (type.js, line 9) " "
 // [Log] 190 (type.js, line 9) "."
@@ -41,12 +45,14 @@ function iteration(){
     correct(parent, child);
         if(child+1 == document.getElementById(parent).children.length){
             if(parent < count){
-                parent++
+                correct_words++;
+                parent++;
             }else{
                 return true;
             }
             child = 0;
         }else{
+            correct_letters++;
             child++;
         }
 
@@ -61,6 +67,7 @@ function removeLine(id, child){
     document.getElementById(id).getElementsByTagName('span')[child].style.borderBottom = "none";
 }
 function wrong(id, child){
+    wrong_letters++;
     audio.play();
     document.getElementById(id).getElementsByTagName('span')[child].style.color = "#F24B59";
     document.getElementById(id).getElementsByTagName('span')[child].style.fontWeight = "bolder";
@@ -76,7 +83,7 @@ function getChildContent(id, child){
 function sleep (time) {
     return new Promise((resolve) => setTimeout(resolve, time));
 }
-let time = 60;
+let time = 4;
 function zfill(val, size) {
     val = val.toString();
     while (val.length < size) val = "0" + val;
@@ -85,7 +92,8 @@ function zfill(val, size) {
 
 var CountDownTimer = setInterval(function(){
     if(time <= 0){
-      clearInterval(CountDownTimer);
+        clearInterval(CountDownTimer);
+        endGame();
     }
     minutes = Math.floor(time / 60)
     minutes = zfill(minutes, 2)
@@ -94,3 +102,11 @@ var CountDownTimer = setInterval(function(){
     document.getElementById("timer").innerHTML = minutes+":"+seconds;
     time -= 1;
   }, 1000);
+
+function endGame(){
+    sessionStorage.setItem("correct_words", correct_words);
+    sessionStorage.setItem("correct_letters", correct_letters);
+    sessionStorage.setItem("wrong_letters", wrong_letters);
+    location.href = 'end-game';
+
+}

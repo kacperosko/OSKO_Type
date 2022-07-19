@@ -136,8 +136,9 @@
     /* border-bottom: 5px solid red; */
 }
 .word{
-    white-space:nowrap;
+    font-size: 25px;
 
+    white-space:nowrap;
     display:inline;
 }
 

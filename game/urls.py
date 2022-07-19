@@ -9,6 +9,7 @@ urlpatterns = [
     # The home page
     # path('', views.home_page, name='home'),
     path("game.html", views.Game.as_view()),
+    path("game", views.Game.as_view()),
     # path("cal", views.Calendar.as_view()),
     # path("cal-add.html", views.cal_add),
     # path("cal-add", views.cal_add),

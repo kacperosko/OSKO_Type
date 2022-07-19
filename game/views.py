@@ -58,5 +58,5 @@ class Game(View):
                 pass
             else:
                 main_text.append(" ")
-        print(len(main_text))
+        print(main_text)
         return render(request, 'home/game.html', {'text': main_text, 'n': range(len(main_text)), 'count':len(main_text)})
