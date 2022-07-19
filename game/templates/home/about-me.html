@@ -1,0 +1,31 @@
+{% extends "layouts/base.html" %}
+
+{% block title %} About me {% endblock %}
+
+{% block stylesheets %}
+
+<style>
+</style>
+{% endblock stylesheets %}
+{% load tag %}
+{% block content %}
+
+<div class="main-box row">
+    <div class="col-md-4 text-end">
+        <img id="me" src="/static/img/animoji.png">
+    </div>
+    <div class="col-md-8">
+        <h2>Hello, I&#39;m&nbsp;<span class="author">Kacper Ośko</span>!</h2>
+        <div class="gradient-separator"></div>
+        <h3>Feel free to contact me:</h3>
+        <div>
+            <a href="mailto:kacper.osko@icloud.com" class="contact">✉️ kacper.osko@icloud.com</a><br>
+            <a href="https://github.com/kacperosko" class="contact" target="_blank">💻 Github</a><br>
+            <a href="https://www.linkedin.com/in/kacperosko/" class="contact" target="_blank">🏢 Linkedin</a>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
+{% block javascripts %}
+{% endblock javascripts %}

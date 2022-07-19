@@ -19,6 +19,18 @@
 .author{
     color: #F24B59;
     font-weight: bold;
+    transition: all 1s;
+    /* left: 50%;
+    transform: translateX(-50%);
+    position:fixed; */
+    
+}
+.center-horizontally{
+    position: fixed;
+    right: 50%;
+    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
 }
 .logo-box{
     display: inline-block;
@@ -114,6 +126,10 @@
     top: 0;
     right: 30vw;
 }
+#me{
+    height: 300px;
+    margin-top: -60px;
+}
 .letter{
     margin-left: -6px;
     transition: all 200ms;
@@ -151,4 +167,19 @@
     font-size: 20px;
     margin-bottom: 40px;
     margin-top: -60px;
+}
+.gradient-separator{
+    width: 440px;
+    height: 6px;
+
+    background: linear-gradient(89.97deg, #F24B6A 1.16%, #0F0F0F 100.46%);
+    border-radius: 68.5px;
+
+    margin-bottom: 40px;
+}
+.contact{
+    color: #0E0E0E;
+}
+.contact:hover{
+    color: #F24B59;
 }

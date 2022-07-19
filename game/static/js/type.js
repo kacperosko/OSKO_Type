@@ -9,8 +9,7 @@ addLine(parent, child);
 // [Log] 190 (type.js, line 9) "."
 // [Log] 188 (type.js, line 9) ","
 document.addEventListener('keydown', (e) => {
-    console.log(e.keyCode)
-    if(e.keyCode !=16){ // If the pressed key is anything other than SHIFT
+    if(e.keyCode !=16){
         c = String.fromCharCode(e.keyCode);
         switch(e.keyCode){
             case 32:
@@ -23,11 +22,10 @@ document.addEventListener('keydown', (e) => {
                 c = ".";
                 break;
         }
-        if(!e.shiftKey){ // If the SHIFT key is down, return the ASCII code for the capital letter
+        if(!e.shiftKey){
             c = c.toLowerCase(c);
         }
         if(c == content){
-            console.log("GREAT!")
             if(iteration()){
                 location.href = 'index.html';
             }
@@ -38,14 +36,6 @@ document.addEventListener('keydown', (e) => {
   }
 });
 
-async function checkKey(id, child, character) {
-    while(val != "ArrowUp"){
-        console.log('x')
-    }
-    console.log("Dziala")
-    wrong(id, child)
-}
-console.log(count)
 function iteration(){
     removeLine(parent,child);
     correct(parent, child);
@@ -53,7 +43,6 @@ function iteration(){
             if(parent < count){
                 parent++
             }else{
-                console.log("ERROR")
                 return true;
             }
             child = 0;
@@ -82,9 +71,7 @@ function correct(id, child){
     document.getElementById(id).getElementsByTagName('span')[child].style.textDecoration = "underline";
 }
 function getChildContent(id, child){
-    console.log(id+" "+ child)
     content = document.getElementById(id).getElementsByTagName('span')[child].innerHTML;
-    console.log(content)
 }
 function sleep (time) {
     return new Promise((resolve) => setTimeout(resolve, time));
