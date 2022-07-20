@@ -48,7 +48,7 @@ Project was made in Python using `Django framework`, and of course `JavaScript`.
 ### Built With
 
 * [![Python]
-* [![Django]
+* <img height="32" width="32" src="https://unpkg.com/simple-icons@v7/icons/django.svg" />
 * [![JavaScript]
 * [![figma]
 * [![HTML]
