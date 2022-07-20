@@ -1,10 +1,5 @@
 <div id="top"></div>
 
-
-
-
-
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -18,7 +13,6 @@
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
@@ -36,7 +30,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]
+![Product Name Screen Shot][product-screenshot]
 
 **OSKO Type** is an app to increase your typing skills. This kinda game will give you random text that you have to **TYPE** in the shortest time as you can! Remember that every wrong letter you'll type will be count :)
 Project was made in Python using `Django framework`, and of course `JavaScript`. Before I writed this app I projected it with `figma` to be sure it will be look gourgos!
@@ -47,13 +41,17 @@ Project was made in Python using `Django framework`, and of course `JavaScript`.
 
 ### Built With
 
-* [![Python]
-* <img height="32" width="32" src="https://unpkg.com/simple-icons@v7/icons/django.svg" />
-* [![JavaScript]
-* [![figma]
-* [![HTML]
-* [![CSS]
-* [![Bootstrap]
+**Python**<br>
+<img height="32" width="32" src="https://unpkg.com/simple-icons@v7/icons/python.svg" /><br>
+**Django**<br>
+<img height="32" width="32" src="https://unpkg.com/simple-icons@v7/icons/django.svg"/><br>
+**JavaScript**<br>
+<img height="32" width="32" src="https://unpkg.com/simple-icons@v7/icons/javascript.svg" /><br>
+**figma**<br>
+<img height="32" width="32" src="https://unpkg.com/simple-icons@v7/icons/figma.svg" /><br>
+**Boostrap**<br>
+<img height="32" width="32" src="https://unpkg.com/simple-icons@v7/icons/bootstrap.svg" /><br>
+
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
