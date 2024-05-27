@@ -7,13 +7,16 @@ from django.urls import reverse
 from django.views.generic import View
 from .models import Text
 import random
+
+
 # Create your views here.
 def index(request):
     context = {'segment': 'index'}
 
     html_template = loader.get_template('home/index.html')
     return HttpResponse(html_template.render(context, request))
-    
+
+
 def pages(request):
     context = {}
     try:
@@ -43,20 +46,21 @@ def pages(request):
         html_template = loader.get_template('home/page-500.html')
         return HttpResponse(html_template.render(context, request))
 
+
 class Game(View):
     def get(self, request):
 
         texts = Text.objects.all()
 
         text = random.choice([t.content for t in texts])
-        # text = "Jestem Kacper"
-        text  = text.split(" ")
+        text = text.split(" ")
         main_text = []
         for word in text:
             main_text.append(word)
-            if text.index(word) == len(text)-1:
+            if text.index(word) == len(text) - 1:
                 pass
             else:
                 main_text.append(" ")
-        print(main_text)
-        return render(request, 'home/game.html', {'text': main_text, 'n': range(len(main_text)), 'count':len(main_text)})
+
+        return render(request, 'home/game.html',
+                      {'text': main_text, 'n': range(len(main_text)), 'count': len(main_text)})
